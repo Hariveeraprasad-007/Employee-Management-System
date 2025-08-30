@@ -15,6 +15,7 @@ class Employee{
 }
 public class Main{
     Static Scanner sc=new Scanner(System.in);
+    ArrayList<Employee> employees=new ArrayList<>();
     public static void main(String[] args){
         int choice;
         do{
@@ -44,5 +45,29 @@ public class Main{
                     break;
             }
         }while(choice!=5);
+    }
+    public static void AddEmployee(){
+        System.out.println("Please enter the id: ");
+        int id=sc.nextInt();
+        sc.nextLine();
+        System.out.println("Please enter the name: ");
+        String name=sc.next();
+        System.out.println("Please enter the department: ");
+        String dept=sc.next();
+        System.out.println("Please enter the salary: ");
+        int salary=sc.nextInt();
+        employees.add(new Employee(id,name,dept,salary));
+        System.out.println("Employee details are added succesfully");
+    }
+    public static void ViewEmployees(){
+        if(employees.isEmpty()){
+            System.out.println("list is empty");
+        }
+        else{
+            for(Employee emp:employees){
+                emp.display();
+            }
+            System.out,println();
+        }
     }
 }
