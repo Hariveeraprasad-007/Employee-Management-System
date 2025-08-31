@@ -70,4 +70,22 @@ public class Main{
             System.out,println();
         }
     }
+    public static void UpdateEmployee(){
+        System.out.printl("Please enter the id to update: ");
+        int id=sc.nextInt();
+        for(Employee emp:employees){
+            if(emp.id==id){
+                sc.nextLine();
+                System.out.println("Please enter new name of the employee: ");
+                emp.name=sc.nextLine();
+                System.out.println("Please enter the department of the employee: ");
+                emp.departmen=sc.nextLine();
+                System.out.println("Please enter the salary of the employee: ");
+                emp.salary=sc.nextDouble();
+                System.out.println("Details are updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Employee not found");
+    }
 }
