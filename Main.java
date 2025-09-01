@@ -88,4 +88,16 @@ public class Main{
         }
         System.out.println("Employee not found");
     }
+    public static void DeleteEmployee(){
+        System.out.println("Please Enter the id to delete: ");
+        int id=sc.nextInt();
+        for(Employee emp:employees){
+            if(emp.id==id){
+                employees.remove(emp);
+                System.out.println("Removed Succesfully");
+                return;
+            }
+        }
+        System.out.println("There is no such id.");
+    }
 }
